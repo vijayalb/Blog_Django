@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Vijayalakshmi Balakrishnan</title>
+	<meta charset="utf-8" />
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'blog/css/materialize.min.css'%}" type = "text/css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<style type="text/css">
+		html,
+		body {
+		  height:100%
+		}
+	</style>
+</head>
+
+<body class="body" style="background-color:#000000">
+	  
+	<div class="container-fluid" style="min-height:95%; ">
+		<div class="row">
+			  <div class="col-sm-10 white-text">
+				  <br>
+				  <center>
+				  <h3>I Share What I Learn</h3>
+				  </center>
+			  </div>
+		</div>
+
+		<div class="row">
+		{% block content %}
+		  <div class="col s12">
+			<div class='card white darken-1 center'>
+			<div class="card-content">
+						<h3>{{post.title}}</h3>
+						<h6>on {{post.date}}</h6>
+						{{post.body|safe|linebreaks}}
+			</div>
+			</div>
+		  </div>
+				{% endblock %}	
+		</div> 
+	</div>
+</body>
+
+</html>
